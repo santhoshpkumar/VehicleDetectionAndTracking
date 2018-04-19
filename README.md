@@ -21,6 +21,24 @@ The steps of this project are the following:
 [image5]: ./examples/bboxes_and_heat.png
 [image6]: ./examples/labels_map.png
 [image7]: ./examples/output_bboxes.png
+
+[image8]: ./output_images/heat_map_2.png
+[image9]: ./output_images/heat_map_1.png
+[image10]: ./output_images/find_cars_3.png
+[image11]: ./output_images/find_cars_2.png
+[image12]: ./output_images/find_cars_1.png
+[image13]: ./output_images/sliding_window_3.png
+[image14]: ./output_images/sliding_window_2.png
+[image15]: ./output_images/sliding_window_1.png
+[image16]: ./output_images/color_bin_vis_2.png
+[image17]: ./output_images/color_bin_vis_1.png
+[image18]: ./output_images/color_bin_vis.png
+[image19]: ./output_images/hog_sample_2.png
+[image20]: ./output_images/hog_sample_1.png
+[image21]: ./output_images/training_sample.png
+[image22]: ./output_images/color_hist_vis.png
+
+
 [video1]: ./project_video.mp4
 
 
@@ -36,6 +54,10 @@ I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an 
 
 ![alt text][image1]
 
+A snapshot of the training set
+
+![alt text][image21]
+
 I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
 
 Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
@@ -47,7 +69,7 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 
 I tried various combinations of parameters and...
 
-#### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
+#### 3. Train a classifier
 
 I trained a linear SVM using...
 
