@@ -44,30 +44,39 @@ The steps of this project are the following:
 
 ---
 
-### Histogram of Oriented Gradients (HOG)
+### Loading and Visualizing the data
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
 The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
 
-I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
-
-![alt text][image1]
-
-A snapshot of the training set
+I started by reading in all the `vehicle` and `non-vehicle` images. A snapshot of the training set
 
 ![alt text][image21]
 
-I then explored different color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
+### Defining a function to return HOG features and visualization
 
-Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
+The **`get_hog_features`** function takes in an image and computes the Histogram of Oriented Gradient (HOG) features in it using the **`hog()`** function from the [scikit-image](http://scikit-image.org/docs/dev/api/skimage.feature.html?highlight=feature%20hog#skimage.feature.hog) package. Below is the visualization of the **`get_hog_features`** function.
 
+![alt text][image19]
 
-![alt text][image2]
+![alt text][image20]
 
-#### 2. Explain how you settled on your final choice of HOG parameters.
+### Defining a function to compute Color Histogram features and visualizing the results
 
-I tried various combinations of parameters and...
+The **`color_hist`** function computes Color Histogram features labeled **`hist_features`**. This function returns concatenated color channels by default and separate color channels if the **`vis == True`** flag is called. Below is the visualization of the **'R' 'G' and 'B'** channels from a random `car_image`.
+
+![alt text][image22]
+
+### Defining a function to return Spatial Binning of Color features and visualizing the results
+
+The **`bin_spatial`** function takes in an image, a color space, and a new image size and returns a feature vector. Useful for extracting color features from low resolution images. Below is an example of spatially binned color features extracted from an image before and after resizing. 
+
+![alt text][image18]
+
+![alt text][image17]
+
+![alt text][image16]
 
 #### 3. Train a classifier
 
