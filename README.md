@@ -129,23 +129,35 @@ Different winows size is used to find cars in varying size because on its distan
 
 ### Video Implementation
 
+Test video (vehicle detection and tracking only)
+[![IMAGE_VIDEO](https://img.youtube.com/vi/EIkunhSrqWg/1.jpg)](https://www.youtube.com/watch?v=EIkunhSrqWg)
+
+Test video (lane and vehicle detection and tracking)
+[![IMAGE_VIDEO](https://img.youtube.com/vi/rFYT6N3LY8U/1.jpg)](https://www.youtube.com/watch?v=rFYT6N3LY8U)
+
+Project video
+[![IMAGE_VIDEO](https://img.youtube.com/vi/lbrDJGkEDEI/1.jpg)](https://www.youtube.com/watch?v=lbrDJGkEDEI)
+
+Project video (with lane detection)
+[![IMAGE_VIDEO](https://img.youtube.com/vi/G5QMzdKEfYc/1.jpg)](https://www.youtube.com/watch?v=G5QMzdKEfYc)
+
 ### Defining a function that can extract features using HOG sub-sampling and make predictions
 
 The **`find_cars`** function extracts the HOG and color features, scales them and then makes predictions. Using multiple scale values allows for more accurate predictions. I have combined scales of **`1.0, 1.5`** and **`2.0`** with their own `ystart` and `ystop` values to lower the ammount of false-postive search boxes. 
 
-![alt text][image10]
+![alt text][image12]
 
 ![alt text][image11]
 
-![alt text][image12]
+![alt text][image10]
 
 ### Adding Heatmaps and Bounding Boxes
 
 The **`add_heat`** function creates a map of positive "car" results found in an image by adding all the pixels found inside of search boxes. More boxes means more "hot" pixels. The **`apply_threshold`** function defines how many search boxes have to overlap for the pixels to be counted as "hot", as a result the "false-positve" search boxes can be discarded. The **`draw_labeled_bboxes`** function takes in the "hot" pixel values from the image and converts them into labels then draws bounding boxes around those labels. Below is an example of these functions at work.
 
-![alt text][image8]
-
 ![alt text][image9]
+
+![alt text][image8]
 
 ---
 
