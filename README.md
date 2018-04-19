@@ -127,20 +127,6 @@ Different winows size is used to find cars in varying size because on its distan
 
 ---
 
-### Video Implementation
-
-Test video (vehicle detection and tracking only)
-[![IMAGE_VIDEO](https://img.youtube.com/vi/EIkunhSrqWg/1.jpg)](https://www.youtube.com/watch?v=EIkunhSrqWg)
-
-Test video (lane and vehicle detection and tracking)
-[![IMAGE_VIDEO](https://img.youtube.com/vi/rFYT6N3LY8U/1.jpg)](https://www.youtube.com/watch?v=rFYT6N3LY8U)
-
-Project video
-[![IMAGE_VIDEO](https://img.youtube.com/vi/lbrDJGkEDEI/1.jpg)](https://www.youtube.com/watch?v=lbrDJGkEDEI)
-
-Project video (with lane detection)
-[![IMAGE_VIDEO](https://img.youtube.com/vi/G5QMzdKEfYc/1.jpg)](https://www.youtube.com/watch?v=G5QMzdKEfYc)
-
 ### Defining a function that can extract features using HOG sub-sampling and make predictions
 
 The **`find_cars`** function extracts the HOG and color features, scales them and then makes predictions. Using multiple scale values allows for more accurate predictions. I have combined scales of **`1.0, 1.5`** and **`2.0`** with their own `ystart` and `ystop` values to lower the ammount of false-postive search boxes. 
@@ -159,11 +145,33 @@ The **`add_heat`** function creates a map of positive "car" results found in an 
 
 ![alt text][image8]
 
+
+### Video Implementation
+
+Test video (vehicle detection and tracking only)
+
+[![IMAGE_VIDEO](https://img.youtube.com/vi/EIkunhSrqWg/1.jpg)](https://www.youtube.com/watch?v=EIkunhSrqWg)
+
+Test video (lane and vehicle detection and tracking)
+
+[![IMAGE_VIDEO](https://img.youtube.com/vi/rFYT6N3LY8U/1.jpg)](https://www.youtube.com/watch?v=rFYT6N3LY8U)
+
+Project video
+
+[![IMAGE_VIDEO](https://img.youtube.com/vi/lbrDJGkEDEI/1.jpg)](https://www.youtube.com/watch?v=lbrDJGkEDEI)
+
+Project video (with lane detection)
+
+[![IMAGE_VIDEO](https://img.youtube.com/vi/G5QMzdKEfYc/1.jpg)](https://www.youtube.com/watch?v=G5QMzdKEfYc)
 ---
 
 ### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+#### 1. Briefly discuss any problems / issues faced in implementation of this project.  What can be do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+One noticeable issue with the processed video and the piepleine is that as we detect object in sliding search, the bouding box flickers, which would need some fine tuneing and with respect to drawing boduning rectangle.
+
+Also, it was observed that the pipeline took quite some time on the project video, which does not make it a good candidate for using real time analysis. This could be caused due to the sliding window which needs to be furthur analysed to reduce the performance.
+
+The size of the sliding windows also needs a smart algorithm that can look for images based on the distance from the car. The effect of this can be seen when a new car is coming into frame, it takes a while until entire car picture is seen to start drawing bounding rectangle.
 
