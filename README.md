@@ -148,6 +148,25 @@ The **`add_heat`** function creates a map of positive "car" results found in an 
 
 ### Video Implementation
 
+#### Patch 1 fix:
+Test video (vehicle detection and tracking only)
+
+[![IMAGE_VIDEO](https://img.youtube.com/vi/6S-k3RG7d_Q/1.jpg)](https://www.youtube.com/watch?v=6S-k3RG7d_Q)
+
+Test video (lane and vehicle detection and tracking)
+
+[![IMAGE_VIDEO](https://img.youtube.com/vi/HYgk0UPpvc4/1.jpg)](https://www.youtube.com/watch?v=HYgk0UPpvc4)
+
+Project video
+
+[![IMAGE_VIDEO](https://img.youtube.com/vi/oURiybGoTYo/1.jpg)](https://www.youtube.com/watch?v=oURiybGoTYo)
+
+Project video (with lane detection)
+
+[![IMAGE_VIDEO](https://img.youtube.com/vi/99ZyT8hm2YM/1.jpg)](https://www.youtube.com/watch?v=99ZyT8hm2YM)
+
+#### Before Review:
+
 Test video (vehicle detection and tracking only)
 
 [![IMAGE_VIDEO](https://img.youtube.com/vi/EIkunhSrqWg/1.jpg)](https://www.youtube.com/watch?v=EIkunhSrqWg)
@@ -163,6 +182,7 @@ Project video
 Project video (with lane detection)
 
 [![IMAGE_VIDEO](https://img.youtube.com/vi/G5QMzdKEfYc/1.jpg)](https://www.youtube.com/watch?v=G5QMzdKEfYc)
+
 ---
 
 ### Discussion
